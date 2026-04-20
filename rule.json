@@ -1,0 +1,5 @@
+{
+  "rule_name": "Brute Force Detection",
+  "condition": "failed_login_attempts > 5",
+  "action": "trigger alert"
+}
