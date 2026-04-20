@@ -1,0 +1,28 @@
+name: Detection Rule Pipeline
+
+on:
+  push:
+    paths:
+      - "rule.json"
+
+jobs:
+  validate-test-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Validate Rule
+        run: |
+          echo "Validating rule..."
+          cat rule.json
+
+      - name: Test Rule (Mock)
+        run: |
+          echo "Testing rule with sample logs..."
+          echo "Test Passed"
+
+      - name: Deploy to SIEM (Mock)
+        run: |
+          echo "Deploying rule to SIEM..."
